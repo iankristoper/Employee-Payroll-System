@@ -13,7 +13,8 @@ import java.util.Scanner;
 public class Payroll_System 
 {
     private List<Employee> employees;   //declare private List with the type of Employee as blueprint
-    private Scanner scanner;            //declare scanner in private 
+    
+    Scanner scanner = new Scanner(System.in);            
     
     //constructor method
     public Payroll_System()
@@ -42,7 +43,7 @@ public class Payroll_System
     }
     
     
-    //
+    //methods for calculating the bonus 
     public void calculateBonus()
     {
         if(employees.isEmpty())
@@ -62,12 +63,19 @@ public class Payroll_System
     }
     
     
+    //methods for displaying the employee info
     public void displayEmployeeInfo()
     {
         if(employees.isEmpty())
         {
             System.out.println("No employee in the system");
             return;
+        }
+        
+        System.out.println("Employee Information: ");
+        for(Employee employee : employees)
+        {
+            System.out.println(employee);
         }
         
         
